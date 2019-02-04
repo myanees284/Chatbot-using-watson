@@ -29,3 +29,10 @@ the idea was materialized using below items:
 In the above dialogue, the response time details are fetched by calling the bluemix function and response times are displayed.
 
 The watson chatbot is integrated with Slack and Skype for the business user to access
+
+
+# To use this
+1) Login into IBM BlueMIX account
+2) Goto Functions and create a Action(in DALLAS region)
+3) Select source type as NodeJS and Runtime as NodeJS 10
+4) Copy the content of 
