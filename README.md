@@ -38,4 +38,7 @@ The watson chatbot is integrated with Slack and Skype for the business user to a
 4) Copy the content of ibm_cloud_function_getLastDataSet.js and paste it in code area
 5) Create parameter with name "input" and enter app name as your desired app like O365 or Citrix
 6) Goto Watson service and create a skill
-7) Import the
+7) Import the skill-test22.json file
+8) check the connectivity.
+
+Most important thing: data should be available in influx db server and accordingly the transaction names should be changed in javscript file
