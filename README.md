@@ -24,7 +24,7 @@ the idea was materialized using below items:
                      transaction name3 : response time
                      transaction name4 : response time
                     Is there anything I can help you with?
-       User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: good Bye)
+       User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)
        
 In the above dialogue, the response time details are fetched by calling the bluemix function and response times are displayed.
 
@@ -35,4 +35,7 @@ The watson chatbot is integrated with Slack and Skype for the business user to a
 1) Login into IBM BlueMIX account
 2) Goto Functions and create a Action(in DALLAS region)
 3) Select source type as NodeJS and Runtime as NodeJS 10
-4) Copy the content of 
+4) Copy the content of ibm_cloud_function_getLastDataSet.js and paste it in code area
+5) Create parameter with name "input" and enter app name as your desired app like O365 or Citrix
+6) Goto Watson service and create a skill
+7) Import the
