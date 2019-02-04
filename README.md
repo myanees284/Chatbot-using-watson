@@ -14,20 +14,20 @@ the idea was materialized using below items:
   2.1) Calls the http api(provided by influx db) to query the databse and return the results in JSON.
   2.2) Format the results in required format
   
-3) IBM WATSON to create chat dialogues as below:
+3) IBM WATSON to create chat dialogues as below:<br />
 
-  3.1) user says: Hello or hi or hey
-  3.2) Bot responds: Good Day. How can I help you?
-  3.3) user response time: get me the response time or some statement containing "response time" as key word
-  3.4) Bot responds: a menu option to select 1 application from the list
-  3.5) User response: selects 1 application
-  3.6) Bot response: Here is the latest time details
-        a) transaction name1 : response time
-        b) transaction name2 : response time
-        c) transaction name3 : response time
-        d) transaction name4 : response time
-        Is there anything I can help you with?
-  3.7) User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)
+  3.1) user says: Hello or hi or hey<br />
+  3.2) Bot responds: Good Day. How can I help you?<br />
+  3.3) user response time: get me the response time or some statement containing "response time" as key word<br />
+  3.4) Bot responds: a menu option to select 1 application from the list<br />
+  3.5) User response: selects 1 application<br />
+  3.6) Bot response: Here is the latest time details<br />
+        a) transaction name1 : response time<br />
+        b) transaction name2 : response time<br />
+        c) transaction name3 : response time<br />
+        d) transaction name4 : response time<br />
+        Is there anything I can help you with?<br />
+  3.7) User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)<br />
               
 In the above dialogue, the response time details are fetched by calling the bluemix function and response times are displayed.
 
