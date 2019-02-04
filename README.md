@@ -22,11 +22,11 @@ the idea was materialized using below items:
   **Bot responds:** a menu option to select 1 application from the list<br />
   **User response:** selects 1 application<br />
   **Bot response:** Here is the latest time details<br />
-                    * *transaction name1 : response time<br />* *
-                    * *transaction name2 : response time<br />
-                    * *transaction name3 : response time<br />
-                    * *transaction name4 : response time<br />
-                  Is there anything I can help you with?<br />
+                    _transaction name1 : response time<br />_
+                    _transaction name2 : response time<br />_
+                    _transaction name3 : response time<br />_
+                    _transaction name4 : response time<br />_
+                  _Is there anything I can help you with?<br />_
   **User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)<br />
               
 In the above dialogue, the response time details are fetched by calling the bluemix function and response times are displayed.
