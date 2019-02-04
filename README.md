@@ -22,7 +22,7 @@ the idea was materialized using below items:
   **Bot responds:** a menu option to select 1 application from the list<br />
   **User response:** selects 1 application<br />
   **Bot response:** Here is the latest time details<br />
-                    * *transaction name1 : response time<br />
+                    * *transaction name1 : response time<br />* *
                     * *transaction name2 : response time<br />
                     * *transaction name3 : response time<br />
                     * *transaction name4 : response time<br />
