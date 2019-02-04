@@ -29,7 +29,7 @@ the idea was materialized using below items:
                   _Is there anything I can help you with?<br />_
   **User response:** Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)<br />
               
-In the above dialogue, the response time details are fetched by calling the bluemix function and response times are displayed.
+In the above dialogue, the response time details are fetched by calling the nodejs function and response times are displayed.
 
 The watson chatbot is integrated with Slack and Skype for the business user to access
 
