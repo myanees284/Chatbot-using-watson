@@ -1,0 +1,360 @@
+{
+  "name": "getData",
+  "intents": [
+    {
+      "intent": "Hello",
+      "examples": [
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Good Morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "u"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "secondRequestNO",
+      "examples": [
+        {
+          "text": "no thank you"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "nothing"
+        },
+        {
+          "text": "no thanks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "SecondRequestYES",
+      "examples": [
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Get me"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ResponseTime",
+      "examples": [
+        {
+          "text": "get me the latest response time please"
+        },
+        {
+          "text": "Response time"
+        },
+        {
+          "text": "latest data please"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ApplicationName",
+      "examples": [
+        {
+          "text": "You have selected O365"
+        },
+        {
+          "text": "you have selected aims"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Hermes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Hermes",
+          "synonyms": [
+            "Hermes"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Citrix",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "citrix",
+          "synonyms": [
+            "Citrix"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "O365",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "O365",
+          "synonyms": [
+            "O365"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "AIMS",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "AIMS",
+          "synonyms": [
+            "AIMS"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "getO365Data",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$discovery_output.body"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1546760723753",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_3_1548147035728"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1546765273842"
+    },
+    {
+      "type": "standard",
+      "title": "UsersecondrequestYES",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "wait a moment..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1548147035728",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1546759608050"
+      },
+      "conditions": "#SecondRequestYES",
+      "dialog_node": "node_6_1548147528466",
+      "previous_sibling": "node_10_1548148491536"
+    },
+    {
+      "type": "standard",
+      "title": "UsersecondrequestNO",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Bye!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1548147035728",
+      "conditions": "#secondRequestNO",
+      "dialog_node": "node_10_1548148491536"
+    },
+    {
+      "type": "standard",
+      "title": "getDetailsfromCF",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_1_1546759608050",
+      "actions": [
+        {
+          "name": "/aneesm@ae.ibm.com_us_south_dev/actions/MultipleAction",
+          "type": "server",
+          "parameters": {
+            "input": "<?input.text?>"
+          },
+          "credentials": "$my_creds",
+          "result_variable": "context.discovery_output"
+        }
+      ],
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1546765273842"
+      },
+      "conditions": "@O365 || @Citrix",
+      "dialog_node": "node_3_1546760723753"
+    },
+    {
+      "type": "standard",
+      "title": "anyotherhelp",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is there anything, I can help you with?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1546765273842",
+      "next_step": {
+        "behavior": "get_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1548147035728"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "select one from the list",
+            "options": [
+              {
+                "label": "AIMS",
+                "value": {
+                  "input": {
+                    "text": "01"
+                  }
+                }
+              },
+              {
+                "label": "0365",
+                "value": {
+                  "input": {
+                    "text": "O365"
+                  }
+                }
+              },
+              {
+                "label": "Hermes",
+                "value": {
+                  "input": {
+                    "text": "03"
+                  }
+                }
+              },
+              {
+                "label": "Citrix",
+                "value": {
+                  "input": {
+                    "text": "Citrix"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#ResponseTime",
+      "dialog_node": "node_1_1546759608050",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Hello",
+      "output": {
+        "context": {
+          "no_reservation": true
+        },
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Day. How can I help you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "my_creds": {
+          "user": "6bc78a79-6897-4dc5-b667-bc900e388107",
+          "password": "bLsxWa1AOb5WenukzSUQGYVineODBJkRckEGNUTLUEjPEjyTYJqjI1VbkcClDIof"
+        }
+      },
+      "metadata": {},
+      "conditions": "#Hello",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "dbec435d-b2bf-4d75-935f-aae8af4ef111",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
