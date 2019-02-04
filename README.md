@@ -16,7 +16,7 @@ the idea was materialized using below items:
   
 3) IBM WATSON to create chat dialogues as below:<br />
 
-  3.1) user says: Hello or hi or hey<br />
+  <b>user says:<b> Hello or hi or hey<br />
   3.2) Bot responds: Good Day. How can I help you?<br />
   3.3) user response time: get me the response time or some statement containing "response time" as key word<br />
   3.4) Bot responds: a menu option to select 1 application from the list<br />
