@@ -16,18 +16,18 @@ the idea was materialized using below items:
   
 3) IBM WATSON to create chat dialogues as below:
 
- # 3.1) user says: Hello or hi or hey
- #      Bot responds: Good Day. How can I help you?
- #      user response time: get me the response time or some statement containing "response time" as key word
- #      Bot responds: a menu option to select 1 application from the list
- #      User response: selects 1 application
- #      Bot response: Here is the latest time details
-  #                   transaction name1 : response time
-  #                  transaction name2 : response time
-  #                 transaction name3 : response time
-  #                   transaction name4 : response time
-  #                  Is there anything I can help you with?
-  #     User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)
+  3.1) user says: Hello or hi or hey
+        Bot responds: Good Day. How can I help you?
+        user response time: get me the response time or some statement containing "response time" as key word
+        Bot responds: a menu option to select 1 application from the list
+        User response: selects 1 application
+        Bot response: Here is the latest time details
+                     transaction name1 : response time
+                     transaction name2 : response time
+                     transaction name3 : response time
+                     transaction name4 : response time
+                     Is there anything I can help you with?
+       User response: Yes/No (if YES - bot responds with menu options/ if NO - Bot says: Good Bye)
        
 In the above dialogue, the response time details are fetched by calling the bluemix function and response times are displayed.
 
