@@ -43,7 +43,7 @@ The watson chatbot is integrated with Slack and Skype for the business user to a
 7) Import the skill-test22.json file
 8) check the connectivity.
 
-Most important thing: data should be available in influx db server and accordingly the transaction names should be changed in javscript file
+**Most important thing:** data should be available in influx db server and accordingly the transaction names should be changed in javscript file
 
 # Demo
 https://youtu.be/vvcKB-BaOjU
