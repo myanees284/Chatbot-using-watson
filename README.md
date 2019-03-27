@@ -11,7 +11,7 @@ the idea was materialized using below items:
 1) Response Time data is made available in influx DB(data fed by automated script)
 2) written a function in node js and leveraged the IBM BlueMix Function service for execution. The function:
 
-  2.1) Calls the http api(provided by influx db) to query the databse, fetches the resultset, compares it with baseline timing(already set and read from seperate excel file against each transaction name), form the JSON and return back to chatbot.
+  2.1) Calls the http api(provided by influx db) to query the databse, fetches the resultset, compares it with baseline timing(already set and read from seperate excel file against each transaction name), form the JSON and return back to chatbot.<br />
   2.2) Format the results in required format
   
 3) IBM WATSON to create chat dialogues as below:<br />
