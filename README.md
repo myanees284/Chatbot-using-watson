@@ -1,5 +1,5 @@
 # Chatbot-using-watson
-This is a chatbot built on purpose to get latest response time details on demand for the business user.
+This is a chatbot built on purpose to get latest response time details on demand for the business users.
 
 A little story....
 A requirement came up to monitor the performance of a critical application in production. 
